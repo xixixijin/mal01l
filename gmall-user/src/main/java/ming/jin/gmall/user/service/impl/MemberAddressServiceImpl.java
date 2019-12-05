@@ -24,4 +24,19 @@ public class MemberAddressServiceImpl implements MemberAddressService {
     public List<MemberAddress> selectByMemId(Integer id){
         return addressMapper.findByMemberId(id);
     }
+
+    @Override
+    public void addMemberAddress(MemberAddress memberAddress) {
+        addressMapper.addMemberAddress(memberAddress);
+    }
+
+    @Override
+    public void updateMemberAddress(MemberAddress memberAddress) {
+        addressMapper.updateMemberAddress(memberAddress);
+    }
+
+    @Override
+    public void deleteMemberAddress(Integer id) {
+        addressMapper.deleteMemberAddress(id);
+    }
 }

@@ -3,6 +3,7 @@ package ming.jin.gmall.user.bean;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -13,6 +14,25 @@ import java.util.Date;
  */
 
 public class Member implements Serializable {
+
+    private List<MemberAddress> memberAddresses;
+    private MemberLevel memberLevel;
+
+    public List<MemberAddress> getMemberAddresses() {
+        return memberAddresses;
+    }
+
+    public void setMemberAddresses(List<MemberAddress> memberAddresses) {
+        this.memberAddresses = memberAddresses;
+    }
+
+    public MemberLevel getMemberLevel() {
+        return memberLevel;
+    }
+
+    public void setMemberLevel(MemberLevel memberLevel) {
+        this.memberLevel = memberLevel;
+    }
 
     private String id;
     private String memberLevelId;

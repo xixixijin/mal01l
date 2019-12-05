@@ -2,7 +2,9 @@ package ming.jin.gmall.user;
 
 import ming.jin.gmall.user.bean.Member;
 import ming.jin.gmall.user.bean.MemberAddress;
+import ming.jin.gmall.user.bean.MemberLevel;
 import ming.jin.gmall.user.controller.MemberAddressController;
+import ming.jin.gmall.user.controller.MemberController;
 import ming.jin.gmall.user.controller.MemberLevelController;
 import ming.jin.gmall.user.service.MemberService;
 import org.junit.jupiter.api.Test;
@@ -16,7 +18,7 @@ import java.util.List;
 class GmallUserApplicationTests {
 
     @Autowired
-    MemberService ms;
+    MemberController memberController;
 
     @Autowired
     MemberLevelController mem;
@@ -25,10 +27,18 @@ class GmallUserApplicationTests {
     MemberAddressController madd;
     @Test
     void contextLoads() {
-        List<MemberAddress> addresses= madd.findByMemId(1);
-    for (MemberAddress address:addresses){
-        System.out.println(address);
+
+        Member member= memberController.findByUsername("test");
+        System.out.println(member);
+//        System.out.println(member.getMemberLevel());
+//        List<MemberAddress> addresses=member.getMemberAddresses();
+//        for (MemberAddress address:addresses){
+//            System.out.println(address);
+//        }
+
+
+
     }
-    }
+
 
 }

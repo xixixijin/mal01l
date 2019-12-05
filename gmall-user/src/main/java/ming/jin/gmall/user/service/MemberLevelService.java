@@ -9,5 +9,29 @@ import ming.jin.gmall.user.bean.MemberLevel;
  * mall01
  */
 public interface MemberLevelService {
-    MemberLevel selectByid(Integer id);
+
+    /**
+     * 根据id查询会员等级
+     * @param id
+     * @return
+     */
+    MemberLevel selectById(Integer id);
+
+    /**
+     * 增加会员等级
+     * @param memberLevel
+     */
+    void addMemberLevel(MemberLevel memberLevel);
+
+    /**
+     * 更新会员等级
+     * @param memberLevel
+     */
+    void updateMemberLevel(MemberLevel memberLevel);
+
+    /**
+     * 删除会员等级
+     * @param
+     */
+    void deleteMemberLeverById(Integer id);
 }

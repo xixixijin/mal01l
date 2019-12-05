@@ -23,4 +23,14 @@ public class MemberAddressController {
         return memberAddressService.selectByMemId(id);
     }
 
+    public void addMemberAddress(MemberAddress memberAddress){
+        memberAddressService.addMemberAddress(memberAddress);
+    }
+    public void updateMemberAddress(MemberAddress memberAddress){
+        memberAddressService.updateMemberAddress(memberAddress);
+    }
+    public void deleteMemberAddress(Integer id){
+        memberAddressService.deleteMemberAddress(id);
+    }
+
 }

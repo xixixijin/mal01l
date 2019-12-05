@@ -12,4 +12,10 @@ import java.util.List;
  */
 public interface MemberAddressService {
     List<MemberAddress> selectByMemId(Integer id);
+
+    void addMemberAddress(MemberAddress memberAddress);
+
+    void updateMemberAddress(MemberAddress memberAddress);
+
+    void deleteMemberAddress(Integer id);
 }

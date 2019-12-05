@@ -1,7 +1,7 @@
 package ming.jin.gmall.user.service.impl;
 
 import ming.jin.gmall.user.bean.MemberLevel;
-import ming.jin.gmall.user.mapper.MemverLevelMapper;
+import ming.jin.gmall.user.mapper.MemberLevelMapper;
 import ming.jin.gmall.user.service.MemberLevelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +16,26 @@ import org.springframework.stereotype.Service;
 public class MemberLevelServiceImpl implements MemberLevelService {
 
     @Autowired
-    MemverLevelMapper memverLevelMapper;
+    MemberLevelMapper memberLevelMapper;
+
     @Override
-    public MemberLevel selectByid(Integer id) {
-        return memverLevelMapper.findById(id);
+    public void addMemberLevel(MemberLevel memberLevel) {
+        memberLevelMapper.addMemberLevel(memberLevel);
+    }
+
+    @Override
+    public void updateMemberLevel(MemberLevel memberLevel) {
+        memberLevelMapper.updateMemberLevel(memberLevel);
+    }
+
+    @Override
+    public void deleteMemberLeverById(Integer id) {
+        memberLevelMapper.deleteMemberLeverById(id);
+    }
+
+
+    @Override
+    public MemberLevel selectById(Integer id) {
+        return memberLevelMapper.findById(id);
     }
 }

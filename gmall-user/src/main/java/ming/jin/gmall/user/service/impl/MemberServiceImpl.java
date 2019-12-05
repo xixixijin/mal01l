@@ -1,6 +1,8 @@
 package ming.jin.gmall.user.service.impl;
 
 import ming.jin.gmall.user.bean.Member;
+import ming.jin.gmall.user.bean.MemberLevel;
+import ming.jin.gmall.user.mapper.MemberLevelMapper;
 import ming.jin.gmall.user.mapper.MemberMapper;
 import ming.jin.gmall.user.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,12 @@ public class MemberServiceImpl implements MemberService {
     @Autowired
     MemberMapper memberMapper;
 
+
     @Override
     public List<Member> selectAll() {
 
         return memberMapper.findAll();
+
     }
 
     @Override

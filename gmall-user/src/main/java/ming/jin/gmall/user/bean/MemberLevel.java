@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 public class MemberLevel implements Serializable {
 
-    private String id;
+    private Integer id;
     private String name;
     private String growthPoint;
     private String defaultStatus;
@@ -25,11 +25,11 @@ public class MemberLevel implements Serializable {
     private String priviledgeBirthday;
     private String note;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
