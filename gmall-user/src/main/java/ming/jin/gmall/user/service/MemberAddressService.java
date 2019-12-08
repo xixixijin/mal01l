@@ -1,6 +1,8 @@
 package ming.jin.gmall.user.service;
 
-import ming.jin.gmall.user.bean.MemberAddress;
+
+
+import ming.jin.bean.MemberAddress;
 
 import java.util.List;
 

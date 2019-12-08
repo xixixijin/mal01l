@@ -1,4 +1,4 @@
-package ming.jin.gmall.user.bean;
+package ming.jin.bean;
 
 
 import java.io.Serializable;

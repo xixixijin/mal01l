@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.controller;
 
-import ming.jin.gmall.user.bean.MemberAddress;
+import ming.jin.bean.MemberAddress;
+
 import ming.jin.gmall.user.service.MemberAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

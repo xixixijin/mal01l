@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.controller;
 
-import ming.jin.gmall.user.bean.Member;
+
+import ming.jin.bean.Member;
 import ming.jin.gmall.user.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,19 @@ public class MemberController {
     @ResponseBody
     public Member findByUsername(@PathVariable String username){
         return memberService.selectByUsername(username);
+    }
+
+
+    public void addMember(Member member){
+        memberService.addMember(member);
+    }
+
+    public void updateMember(Member member){
+        memberService.updateMember(member);
+    }
+
+    public void deleteMember(String username){
+        memberService.deleteMember(username);
     }
 
 }

@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.mapper;
 
-import ming.jin.gmall.user.bean.Member;
+
+import ming.jin.bean.Member;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.mapping.FetchType;
 import org.springframework.stereotype.Component;
@@ -42,11 +43,11 @@ public interface MemberMapper {
             @Result(column = "growth",property = "growth"),
             @Result(column = "luckey_count",property = "luckeyCount"),
             @Result(column = "history_integration",property = "history_integration"),
-            @Result(column = "member_level_id",property = "memberLevel" ,one=@One(
-                    select = "ming.jin.gmall.user.mapper.MemberLevelMapper.findById",fetchType = FetchType.DEFAULT
+            @Result(column = "member_level_id",property = "memberLevel" ,one=@One(/* column 是数据库的名字  property是类的属性  select是mapper里的查询方法*/
+                    select = "ming.jin.gmall.user.mapper.MemberLevelMapper.findById",fetchType = FetchType.LAZY
             )),
             @Result(column = "id",property = "memberAddresses",many = @Many(
-                    select = "ming.jin.gmall.user.mapper.MemberAddressMapper.findByMemberId",fetchType = FetchType.DEFAULT
+                    select = "ming.jin.gmall.user.mapper.MemberAddressMapper.findByMemberId",fetchType = FetchType.LAZY
             ))
 
     })
@@ -88,8 +89,11 @@ public interface MemberMapper {
     })
     Member findByUsername( String username);
 
-    @Insert("insert into ums_member(member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration) values()")
+    @Insert("insert into ums_member(member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration) values(#{memberLevelId},#{username},#{password},#{nickname},#{phone},#{status},#{createTime},#{icon},#{gender},#{birthday},#{city},#{job},#{personalizedSignature},#{sourceType},#{integration},#{growth},#{luckeyCount},#{historyIntegration})")
     void addMember(Member member);
+
+    @Update("update ums_member set member_level_id=#{memberLevelId},username=#{username},password=#{password},nickname=#{nickname},phone=#{phone},status=#{status},create_time=#{createTime},icon=#{icon},gender#{gender},birthday=#{birthday},city=#{city},job=#{job},personalized_signature=#{personalizedSignature},source_type=#{sourceType},integration=#{integration},growth=#{growth},luckey_count=#{luckeyCount},history_integration=#{historyIntegration} where id =#{id}")
+    void updateMember(Member member);
 
     @Delete("delete from ums_member where username=#{username}")
     void deleteMember(String username);

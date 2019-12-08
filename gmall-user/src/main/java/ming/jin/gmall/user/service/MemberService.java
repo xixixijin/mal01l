@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.service;
 
-import ming.jin.gmall.user.bean.Member;
+import ming.jin.bean.Member;
+
 
 
 import java.util.List;
@@ -17,5 +18,11 @@ public interface MemberService {
     List<Member> selectAll();
 
     Member selectByUsername(String username);
+
+    void addMember(Member member);
+
+    void updateMember(Member member);
+
+    void deleteMember(String  username);
 
 }

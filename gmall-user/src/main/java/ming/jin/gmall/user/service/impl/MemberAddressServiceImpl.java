@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.service.impl;
 
-import ming.jin.gmall.user.bean.MemberAddress;
+
+import ming.jin.bean.MemberAddress;
 import ming.jin.gmall.user.mapper.MemberAddressMapper;
 import ming.jin.gmall.user.service.MemberAddressService;
 import org.springframework.beans.factory.annotation.Autowired;

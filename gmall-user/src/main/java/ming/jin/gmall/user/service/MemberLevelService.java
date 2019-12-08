@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.service;
 
-import ming.jin.gmall.user.bean.MemberLevel;
+
+import ming.jin.bean.MemberLevel;
 
 /**
  * @author Haokun

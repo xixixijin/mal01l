@@ -1,6 +1,7 @@
 package ming.jin.gmall.user.service.impl;
 
-import ming.jin.gmall.user.bean.MemberLevel;
+
+import ming.jin.bean.MemberLevel;
 import ming.jin.gmall.user.mapper.MemberLevelMapper;
 import ming.jin.gmall.user.service.MemberLevelService;
 import org.springframework.beans.factory.annotation.Autowired;

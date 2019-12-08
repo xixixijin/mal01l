@@ -1,8 +1,8 @@
 package ming.jin.gmall.user.service.impl;
 
-import ming.jin.gmall.user.bean.Member;
-import ming.jin.gmall.user.bean.MemberLevel;
-import ming.jin.gmall.user.mapper.MemberLevelMapper;
+
+
+import ming.jin.bean.Member;
 import ming.jin.gmall.user.mapper.MemberMapper;
 import ming.jin.gmall.user.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +36,20 @@ public class MemberServiceImpl implements MemberService {
     public Member selectByUsername(String username) {
 
         return memberMapper.findByUsername(username);
+    }
+
+    @Override
+    public void addMember(Member member) {
+        memberMapper.addMember(member);
+    }
+
+    @Override
+    public void updateMember(Member member) {
+        memberMapper.updateMember(member);
+    }
+
+    @Override
+    public void deleteMember(String username) {
+        memberMapper.deleteMember(username);
     }
 }

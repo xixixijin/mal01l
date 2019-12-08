@@ -1,10 +1,9 @@
 package ming.jin.gmall.user.mapper;
 
-import ming.jin.gmall.user.bean.MemberLevel;
+import ming.jin.bean.MemberLevel;
+
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
 
 /**
  * @author Haokun
