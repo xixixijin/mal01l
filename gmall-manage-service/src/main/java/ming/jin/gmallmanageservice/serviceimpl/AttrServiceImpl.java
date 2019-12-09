@@ -2,6 +2,7 @@ package ming.jin.gmallmanageservice.serviceimpl;
 
 import ming.jin.bean.PmsBaseAttrInfo;
 import ming.jin.bean.PmsBaseAttrValue;
+import ming.jin.bean.PmsBaseSaleAttr;
 import ming.jin.gmallmanageservice.mapper.AttrMapper;
 import ming.jin.service.AttrService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +61,10 @@ public class AttrServiceImpl implements AttrService {
     @Override
     public void addAttrValue(PmsBaseAttrValue attrValue) {
         attrMapper.addAttrValue(attrValue);
+    }
+
+    @Override
+    public List<PmsBaseSaleAttr> getBaseSaleAttrList() {
+        return attrMapper.getBaseSaleAttrList();
     }
 }

@@ -2,6 +2,7 @@ package ming.jin.service;
 
 import ming.jin.bean.PmsBaseAttrInfo;
 import ming.jin.bean.PmsBaseAttrValue;
+import ming.jin.bean.PmsBaseSaleAttr;
 
 import java.util.List;
 
@@ -31,4 +32,5 @@ public interface AttrService {
 
     void addAttrValue(PmsBaseAttrValue attrValue);
 
+    List<PmsBaseSaleAttr> getBaseSaleAttrList();
 }

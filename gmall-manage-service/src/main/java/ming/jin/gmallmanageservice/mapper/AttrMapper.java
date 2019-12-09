@@ -2,7 +2,9 @@ package ming.jin.gmallmanageservice.mapper;
 
 import ming.jin.bean.PmsBaseAttrInfo;
 import ming.jin.bean.PmsBaseAttrValue;
+import ming.jin.bean.PmsBaseSaleAttr;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.mapping.FetchType;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,6 +20,15 @@ import java.util.List;
 public interface AttrMapper {
 
     @Select("select * from pms_base_attr_info where catalog3_id=#{catalog3Id}")
+   /* @Results(id="attrInfoMap",value = {
+            @Result(id=true,column = "id",property = "id"),
+            @Result(column = "attr_name",property = "attrName"),
+            @Result(column = "catalog3_id",property = "catalog3Id"),
+            @Result(column = "is_enabled",property = "isEnabled"),
+            @Result(column = "id",property = "attrValueList",many = @Many(
+                    select = "ming.jin.gmallmanageservice.mapper.AttrMapper.getAttrValue",fetchType = FetchType.LAZY
+            ))
+    })*/
     List<PmsBaseAttrInfo> getAttrInfo(String catalog3Id);
 
     @Delete("delete from pms_base_attr_info where id=#{id}")
@@ -43,4 +54,6 @@ public interface AttrMapper {
     void addAttrValue(PmsBaseAttrValue attrValue);
 
 
+    @Select("select * from pms_base_sale_attr")
+    List<PmsBaseSaleAttr> getBaseSaleAttrList();
 }

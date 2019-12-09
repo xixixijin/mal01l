@@ -2,6 +2,8 @@ package ming.jin.gmallmanageservice.controller;
 
 import ming.jin.bean.PmsBaseAttrInfo;
 import ming.jin.bean.PmsBaseAttrValue;
+import ming.jin.bean.PmsBaseSaleAttr;
+import ming.jin.bean.PmsProductInfo;
 import ming.jin.service.AttrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +25,15 @@ public class AttrController {
 
     @RequestMapping("/attrInfoList")
     public List<PmsBaseAttrInfo> getAttrInfo(String catalog3Id){
-        return attrService.getAttrInfo(catalog3Id);
+        List<PmsBaseAttrInfo> pmsBaseAttrInfos=attrService.getAttrInfo(catalog3Id);
+
+        for (PmsBaseAttrInfo pmsBaseAttrInfo:pmsBaseAttrInfos){
+            String attrId=pmsBaseAttrInfo.getId();
+            pmsBaseAttrInfo.setAttrValueList(attrService.getAttrvalue(attrId));
+        }
+
+
+        return pmsBaseAttrInfos;
     }
 
     @RequestMapping("/getAttrValueList")
@@ -80,5 +90,9 @@ public class AttrController {
 
     }
 
+    @RequestMapping("/baseSaleAttrList")
+    public List<PmsBaseSaleAttr> getBaseSaleAttrList(){
+        return attrService.getBaseSaleAttrList();
+    }
 
 }
